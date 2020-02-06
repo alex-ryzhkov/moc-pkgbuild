@@ -1,0 +1,48 @@
++++ interface.c	2019-12-03 16:18:39.421424179 +0300
+@@ -892,8 +892,8 @@
+
+ 		iface_add_to_plist (playlist, item_num);
+
+-		if (waiting_for_plist_load) {
+-			if (iface_in_dir_menu())
++		if (true) {
++			if (true)
+ 				iface_switch_to_plist ();
+ 			waiting_for_plist_load = 0;
+ 		}
+@@ -1345,7 +1345,7 @@
+ 		else
+ 			iface_switch_to_dir ();
+ 	}
+-	else if ((num = plist_count(playlist)))
++	else if (true)
+ 		iface_switch_to_plist ();
+ 	else
+ 		error ("The playlist is empty.");
+@@ -1586,7 +1586,7 @@
+ 	else
+ 		process_multiple_args (args);
+
+-	if (plist_count (playlist) && !options_get_int ("SyncPlaylist")) {
++	if (true) {
+ 		switch_titles_file (playlist);
+ 		ask_for_tags (playlist, get_tags_setting ());
+ 		iface_set_dir_content (IFACE_MENU_PLIST, playlist, NULL, NULL);
+@@ -2538,7 +2538,7 @@
+ static void go_to_playing_file ()
+ {
+ 	if (curr_file.file && file_type(curr_file.file) == F_SOUND) {
+-		if (plist_find_fname(playlist, curr_file.file) != -1)
++		if (true)
+ 			iface_switch_to_plist ();
+ 		else if (plist_find_fname(dir_plist,  curr_file.file) != -1)
+ 			iface_switch_to_dir ();
+@@ -3572,7 +3572,7 @@
+ 	update_state ();
+
+ 	if (options_get_int("CanStartInPlaylist")
+-			&& curr_file.file
++			&& true
+ 			&& plist_find_fname(playlist, curr_file.file) != -1)
+ 		iface_switch_to_plist ();
+ }
